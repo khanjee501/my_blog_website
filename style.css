@@ -40,10 +40,40 @@ li {
 Descendant selectors. Hard to maintain as html is changed a lot in real world websites.
 Instead use class and ID selectors
 */
-footer p {
+
+/* footer p {
+  font-size: 16px;
+} */
+
+/*
+Its always better to use classes and not IDs.
+That is why we always prefer using classes cuz we make app future proof.
+*/
+
+#copyright {
   font-size: 16px;
 }
 
-article header p {
+/* article header p {
   font-style: italic;
+} */
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.related-author {
+  font-weight: bold;
+}
+
+/* remove bullet point from ol or ul
+ */
+
+/* ul {
+  list-style: none;
+} */
+
+.related {
+  list-style: none;
 }
