@@ -1,11 +1,17 @@
-h1,
-h2,
-h3,
-h4,
-p,
-li {
-  font-family: sans-serif;
+* {
+  /* this will apply the border to all the elements on the page */
+  /* The main diff between universal and body selector is that there is no inheritance involved in case of * */
+  /* border-top: 10px solid #1098ad; */
+}
+
+body {
+  /* Inherited properties are mostly related to text. So the CSS properties for text are usually inherited */
   color: #444;
+  font-size: 18px;
+  font-family: sans-serif;
+
+  /* Not a inherited property so only added on top of body and not other children of body */
+  border-top: 10px solid #1098ad;
 }
 
 h1, h2, h3 {
