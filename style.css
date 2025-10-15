@@ -124,6 +124,46 @@ article p:first-child {
 /*
 this will work cuz p is the last child
 */
-article p:last-child {
+
+/* article p:last-child {
   color: red;
+} */
+
+/* STYLING LINKS */
+
+/* Always define the below anchor psuedoclasss in the same way */
+
+/* LVHA */
+
+/* this pseudoclass will only target anchor tags that have href attribute */
+a:link{
+  color: #1098ad;
 }
+
+a:visited {
+  /* color: #444; */
+  color: #1098ad;
+}
+
+a:hover{
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+a:active{
+  background-color: black;
+  font-style: italic;
+}
+
+/* RESOLVING CONFLICTS BETWEEN CSS SELECTORS */
+/* SELECTORS FROM HIGHEST PRIORITY TO LOWEST PRIORITY */
+/*
+1. Declarations marked with !important
+2. Inline styles
+3. ID Selectors
+4. Class Selectors
+5. Psuedoclasses. ie a:hover is higher priority than a
+6. Element Selectors ie p, div, h1, li etc
+7. Universal Selector (*)
+*/
