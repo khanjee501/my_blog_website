@@ -5,6 +5,11 @@ h4,
 p,
 li {
   font-family: sans-serif;
+  color: #444;
+}
+
+h1, h2, h3 {
+  color: #1098ad;
 }
 
 h1 {
@@ -76,4 +81,14 @@ That is why we always prefer using classes cuz we make app future proof.
 
 .related {
   list-style: none;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
 }
