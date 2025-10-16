@@ -23,6 +23,17 @@ body {
   border-top: 10px solid #1098ad;
 }
 
+.container {
+  width: 1400px;
+  /* margin-left: auto;
+  margin-right: auto; */
+
+  /*
+  The above can also be written as below
+  */
+  margin: 0 auto;
+}
+
 .main-header {
   background-color: #f7f7f7;
   /* First value on top and bottom and second on left and right */
@@ -47,7 +58,9 @@ nav {
   font-size: 18px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #1098ad;
 }
 
@@ -152,7 +165,6 @@ li:last-child {
   color: red;
 } */
 
-
 /*
 this wont work cuz p is not the first child
 */
@@ -175,7 +187,7 @@ this will work cuz p is the last child
 /* LVHA */
 
 /* this pseudoclass will only target anchor tags that have href attribute */
-a:link{
+a:link {
   color: #1098ad;
 }
 
@@ -184,13 +196,13 @@ a:visited {
   color: #1098ad;
 }
 
-a:hover{
+a:hover {
   color: orangered;
   font-weight: bold;
   text-decoration: underline orangered;
 }
 
-a:active{
+a:active {
   background-color: black;
   font-style: italic;
 }
