@@ -2,7 +2,16 @@
   /* this will apply the border to all the elements on the page */
   /* The main diff between universal and body selector is that there is no inheritance involved in case of * */
   /* border-top: 10px solid #1098ad; */
+  margin: 0;
+  padding: 0;
 }
+
+/*
+Collapsing margins are where there is bottom on the element above and top margin on the element below.
+So two spaces between adjacent elements. So the greater one will take precedence and it will only be applied
+eb if two p elements and the top p has margin-bottom of 20px and the lower p has margin-top of 40px then the
+total space would be 40 px and not 60px. This phenomenon is called collapsing amrgins.
+*/
 
 body {
   /* Inherited properties are mostly related to text. So the CSS properties for text are usually inherited */
@@ -12,6 +21,28 @@ body {
 
   /* Not a inherited property so only added on top of body and not other children of body */
   border-top: 10px solid #1098ad;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  /* First value on top and bottom and second on left and right */
+  padding: 20px 40px;
+  margin-bottom: 60px;
+}
+
+.article-header {
+  margin-bottom: 20px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+}
+
+nav {
+  font-size: 18px;
 }
 
 h1, h2, h3 {
@@ -26,10 +57,13 @@ h1 {
 
 h2 {
   font-size: 40px;
+  margin-bottom: 30px;
 }
 
 h3 {
   font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 h4 {
@@ -41,10 +75,17 @@ h4 {
 p {
   font-size: 22px;
   line-height: 1.5;
+  margin-bottom: 15px;
 }
 
 li {
   font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+li:last-child {
+  margin-bottom: 0;
 }
 
 /*
@@ -89,16 +130,6 @@ That is why we always prefer using classes cuz we make app future proof.
   list-style: none;
 }
 
-.main-header {
-  background-color: #f7f7f7;
-}
-
-aside {
-  background-color: #f7f7f7;
-  border-top: 5px solid #1098ad;
-  border-bottom: 5px solid #1098ad;
-}
-
 li:first-child {
   font-weight: bold;
 }
@@ -115,9 +146,9 @@ li:last-child {
   color: red;
 } */
 
-li:nth-child(even) {
+/* li:nth-child(even) {
   color: red;
-}
+} */
 
 
 /*
@@ -137,7 +168,7 @@ this will work cuz p is the last child
 
 /* STYLING LINKS */
 
-/* Always define the below anchor psuedoclasss in the same way */
+/* Always define all the below anchor psuedoclasss all of the and in the same order */
 
 /* LVHA */
 
