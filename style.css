@@ -39,7 +39,8 @@ body {
   /* First value on top and bottom and second on left and right */
   padding: 20px 40px;
   margin-bottom: 60px;
-  height: 80px;
+  /* Always try to avoid fixed height and widths */
+  /* height: 80px; */
 }
 
 .article-header {
@@ -212,6 +213,17 @@ a:active {
   height: auto;
 }
 
+nav a:link {
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
+}
+
 /* RESOLVING CONFLICTS BETWEEN CSS SELECTORS */
 /* SELECTORS FROM HIGHEST PRIORITY TO LOWEST PRIORITY */
 /*
@@ -223,4 +235,11 @@ a:active {
 6. Element Selectors ie p, div, h1, li etc
 7. Universal Selector (*)
 8. Inherited styles have the lowest priority.
+*/
+
+/* TYPES OF ELEMENTS AND THERE PROPERTIES */
+/*
+Paddings and margins only horizontally on inline elements.
+In order to apply box model to them ie width, height, paddings and margins convert display to inline-block.
+img is an inline-block element
 */
