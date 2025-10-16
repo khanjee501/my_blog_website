@@ -28,6 +28,7 @@ body {
   /* First value on top and bottom and second on left and right */
   padding: 20px 40px;
   margin-bottom: 60px;
+  height: 80px;
 }
 
 .article-header {
@@ -39,6 +40,7 @@ aside {
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
   padding: 50px 0;
+  width: 500px;
 }
 
 nav {
@@ -191,6 +193,11 @@ a:hover{
 a:active{
   background-color: black;
   font-style: italic;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
 }
 
 /* RESOLVING CONFLICTS BETWEEN CSS SELECTORS */
