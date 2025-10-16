@@ -1,0 +1,278 @@
+* {
+  /* this will apply the border to all the elements on the page */
+  /* The main diff between universal and body selector is that there is no inheritance involved in case of * */
+  /* border-top: 10px solid #1098ad; */
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Collapsing margins are where there is bottom on the element above and top margin on the element below.
+So two spaces between adjacent elements. So the greater one will take precedence and it will only be applied
+eb if two p elements and the top p has margin-bottom of 20px and the lower p has margin-top of 40px then the
+total space would be 40 px and not 60px. This phenomenon is called collapsing amrgins.
+*/
+
+body {
+  /* Inherited properties are mostly related to text. So the CSS properties for text are usually inherited */
+  color: #444;
+  font-size: 18px;
+  font-family: sans-serif;
+
+  /* Not a inherited property so only added on top of body and not other children of body */
+  border-top: 10px solid #1098ad;
+  position: relative;
+}
+
+.container {
+  width: 1400px;
+  /* margin-left: auto;
+  margin-right: auto; */
+
+  /*
+  The above can also be written as below
+  */
+  margin: 0 auto;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  /* First value on top and bottom and second on left and right */
+  padding: 20px 40px;
+  margin-bottom: 60px;
+  /* Always try to avoid fixed height and widths */
+  /* height: 80px; */
+}
+
+.article-header {
+  margin-bottom: 20px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+  width: 500px;
+}
+
+nav {
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/* Content property is must for after psuedoclass */
+h2::after {
+  content: "TOP";
+  font-size: 16px;
+  color: #444;
+  font-weight: bold;
+  background-color: yellow;
+  padding: 5px 10px;
+  position: absolute;
+  top: -15px;
+  right: -25px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+/* Adjacent sibling selector */
+/* h3 + p::first-line {
+  color: red;
+} */
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/*
+Descendant selectors. Hard to maintain as html is changed a lot in real world websites.
+Instead use class and ID selectors
+*/
+
+/* footer p {
+  font-size: 16px;
+} */
+
+/*
+Its always better to use classes and not IDs.
+That is why we always prefer using classes cuz we make app future proof.
+*/
+
+#copyright {
+  font-size: 16px;
+}
+
+/* article header p {
+  font-style: italic;
+} */
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.related-author {
+  font-weight: bold;
+}
+
+/* remove bullet point from ol or ul
+ */
+
+/* ul {
+  list-style: none;
+} */
+
+.related {
+  list-style: none;
+}
+
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+/* li:nth-child(2) {
+  color: red;
+} */
+
+/* li:nth-child(odd) {
+  color: red;
+} */
+
+/* li:nth-child(even) {
+  color: red;
+} */
+
+/*
+this wont work cuz p is not the first child
+*/
+article p:first-child {
+  color: red;
+}
+
+/*
+this will work cuz p is the last child
+*/
+
+/* article p:last-child {
+  color: red;
+} */
+
+/* STYLING LINKS */
+
+/* Always define all the below anchor psuedoclasss all of the and in the same order */
+
+/* LVHA */
+
+/* this pseudoclass will only target anchor tags that have href attribute */
+a:link {
+  color: #1098ad;
+}
+
+a:visited {
+  /* color: #444; */
+  color: #1098ad;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+}
+
+nav a:link {
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+button {
+  font-size: 22px;
+  padding: 10px;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+
+/* RESOLVING CONFLICTS BETWEEN CSS SELECTORS */
+/* SELECTORS FROM HIGHEST PRIORITY TO LOWEST PRIORITY */
+/*
+1. Declarations marked with !important
+2. Inline styles
+3. ID Selectors
+4. Class Selectors
+5. Psuedoclasses. ie a:hover is higher priority than a
+6. Element Selectors ie p, div, h1, li etc
+7. Universal Selector (*)
+8. Inherited styles have the lowest priority.
+*/
+
+/* TYPES OF ELEMENTS AND THERE PROPERTIES */
+/*
+Paddings and margins only horizontally on inline elements.
+In order to apply box model to them ie width, height, paddings and margins convert display to inline-block.
+img is an inline-block element
+*/
