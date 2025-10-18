@@ -304,6 +304,13 @@ nav {
 
 /* if clearing left float then clear left, right for right and in this case we have both right and left so
 both */
-.clear {
+/* .clear {
   clear: both;
+} */
+
+/* Another way of clearing floats */
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
 }
