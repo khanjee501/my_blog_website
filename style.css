@@ -33,7 +33,7 @@ body {
 }
 
 .container {
-  width: 1200px;
+  width: 1400px;
   /* margin-left: auto;
   margin-right: auto; */
 
@@ -251,7 +251,6 @@ a:active {
 nav a:link {
   display: inline-block;
   margin-right: 30px;
-  margin-top: 10px;
   text-decoration: none;
 }
 
@@ -288,28 +287,28 @@ img is an inline-block element
 */
 
 /*  FLOATS  */
-
+/*
 .author-img {
   float: left;
 }
 
 /* We need to make it a float too so that it starts directly after author-img and not behind it */
-.author {
-  /* padding-left: 10px; */
-  margin-top: 10px;
+/* .author { */
+/* padding-left: 10px; */
+/* margin-top: 10px;
   margin-left: 20px;
   float: left;
-}
+} */
 
 /* Collapsing elements are when an elements children are all floated so the parents elements
 own height becomes zero cuz its children are all floated. */
-h1 {
+/* h1 {
   float: left;
 }
 
 nav {
   float: right;
-}
+} */
 
 /* if clearing left float then clear left, right for right and in this case we have both right and left so
 both */
@@ -318,24 +317,68 @@ both */
 } */
 
 /* Another way of clearing floats */
-.clearfix::after {
+/* .clearfix::after {
   clear: both;
   content: "";
   display: block;
 }
 
 article {
-  width: 825px;
+  width: 925px;
   float: left;
 }
 
 aside {
-  width: 300px;
+  width: 400px;
   float: right;
-}
+} */
 
 /* we dont need to add an empty div or clearfix class for the floating footer
 cuz we already have a footer container to clear both floats on */
-footer {
+/* footer {
   clear: both;
+}  */
+
+/*  FLEXBOX */
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.author {
+  margin-bottom: 0;
+  margin-left: 15px;
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.related-link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+  /* We need to set dsiplay to block in order to apply margin-bottom to it as anchor elements
+  are inline elements */
+  display: block;
+  margin-bottom: 5px;
+}
+
+.related-author {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
 }
