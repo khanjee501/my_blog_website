@@ -292,10 +292,18 @@ img is an inline-block element
   float: left;
 }
 
+/* Collapsing elements are when an elements children are all floated so the parents elements
+own height becomes zero cuz its children are all floated. */
 h1 {
   float: left;
 }
 
 nav {
   float: right;
+}
+
+/* if clearing left float then clear left, right for right and in this case we have both right and left so
+both */
+.clear {
+  clear: both;
 }
