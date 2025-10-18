@@ -4,6 +4,14 @@
   /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
+  /* content-box is the default behaviour and it its size == container width + padding
+border-box is another very imp property and should be set on universal selector cuz if you set a width
+for a container and add padding then the size of the box will remain the same i.e,
+
+content-box => width or height of content = 100px and padding 20px then total width becomes => 120 px
+border-box => width or height of content = 100px and padding 20 px then total width remains 100px cuz
+the content width will become 80 px and 20px padding*/
+  box-sizing: border-box;
 }
 
 /*
@@ -52,8 +60,7 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 10px;
 }
 
 nav {
@@ -112,6 +119,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -170,6 +178,7 @@ That is why we always prefer using classes cuz we make app future proof.
 
 .related {
   list-style: none;
+  margin-left: 0;
 }
 
 li:first-child {
