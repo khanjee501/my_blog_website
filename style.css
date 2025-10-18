@@ -316,11 +316,17 @@ both */
 }
 
 article {
-  width: 900px;
+  width: 825px;
   float: left;
 }
 
 aside {
   width: 300px;
   float: right;
+}
+
+/* we dont need to add an empty div or clearfix class for the floating footer
+cuz we already have a footer container to clear both floats on */
+footer {
+  clear: both;
 }
