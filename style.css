@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  width: 1400px;
+  width: 1200px;
   /* margin-left: auto;
   margin-right: auto; */
 
@@ -58,6 +58,7 @@ aside {
 
 nav {
   font-size: 18px;
+  text-align: center;
 }
 
 h1,
@@ -276,3 +277,25 @@ Paddings and margins only horizontally on inline elements.
 In order to apply box model to them ie width, height, paddings and margins convert display to inline-block.
 img is an inline-block element
 */
+
+/*  FLOATS  */
+
+.author-img {
+  float: left;
+}
+
+/* We need to make it a float too so that it starts directly after author-img and not behind it */
+.author {
+  /* padding-left: 10px; */
+  margin-top: 10px;
+  margin-left: 20px;
+  float: left;
+}
+
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
