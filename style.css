@@ -4,6 +4,14 @@
   /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
+  /* content-box is the default behaviour and it its size == container width + padding
+border-box is another very imp property and should be set on universal selector cuz if you set a width
+for a container and add padding then the size of the box will remain the same i.e,
+
+content-box => width or height of content = 100px and padding 20px then total width becomes => 120 px
+border-box => width or height of content = 100px and padding 20 px then total width remains 100px cuz
+the content width will become 80 px and 20px padding*/
+  box-sizing: border-box;
 }
 
 /*
@@ -39,7 +47,7 @@ body {
   background-color: #f7f7f7;
   /* First value on top and bottom and second on left and right */
   padding: 20px 40px;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   /* Always try to avoid fixed height and widths */
   /* height: 80px; */
 }
@@ -52,12 +60,12 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 10px;
 }
 
 nav {
   font-size: 18px;
+  text-align: center;
 }
 
 h1,
@@ -111,6 +119,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -169,6 +178,7 @@ That is why we always prefer using classes cuz we make app future proof.
 
 .related {
   list-style: none;
+  margin-left: 0;
 }
 
 li:first-child {
@@ -241,7 +251,6 @@ a:active {
 nav a:link {
   display: inline-block;
   margin-right: 30px;
-  margin-top: 10px;
   text-decoration: none;
 }
 
@@ -276,3 +285,170 @@ Paddings and margins only horizontally on inline elements.
 In order to apply box model to them ie width, height, paddings and margins convert display to inline-block.
 img is an inline-block element
 */
+
+/*  FLOATS  */
+/*
+.author-img {
+  float: left;
+}
+
+/* We need to make it a float too so that it starts directly after author-img and not behind it */
+/* .author { */
+/* padding-left: 10px; */
+/* margin-top: 10px;
+  margin-left: 20px;
+  float: left;
+} */
+
+/* Collapsing elements are when an elements children are all floated so the parents elements
+own height becomes zero cuz its children are all floated. */
+/* h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+} */
+
+/* if clearing left float then clear left, right for right and in this case we have both right and left so
+both */
+/* .clear {
+  clear: both;
+} */
+
+/* Another way of clearing floats */
+/* .clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+article {
+  width: 925px;
+  float: left;
+}
+
+aside {
+  width: 400px;
+  float: right;
+} */
+
+/* we dont need to add an empty div or clearfix class for the floating footer
+cuz we already have a footer container to clear both floats on */
+/* footer {
+  clear: both;
+}  */
+
+/*  FLEXBOX */
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.author {
+  margin-bottom: 0;
+  margin-left: 15px;
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.related-link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+  /* We need to set dsiplay to block in order to apply margin-bottom to it as anchor elements
+  are inline elements */
+  display: block;
+  margin-bottom: 5px;
+}
+
+.related-author {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* FLEXBOX LAYOUT */
+/* .row {
+  display: flex;
+
+  The default value of align-items is strech so it will strech all the children of the row to the height
+  of the highest element and in our case the aside is streched to the full height of article but we
+  only need small space for its content so align-items: flex-start; will work
+  align-items: flex-start;
+  The gap is a flex property and should be used if using flex for layout
+  gap: 75px;
+  margin-bottom: 60px;
+}
+
+article {
+
+  DEFAULTS
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+
+
+  flex: 0 0 925px;
+
+  The above can also be acheived by the below which will make it keep all the available space
+
+  flex: 1;
+  margin-bottom: 0;
+}
+
+aside {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 400px;
+
+  The above can also be acheived by
+
+  flex: 0 0 400px;
+} */
+
+li {
+  margin-left: 30px;
+}
+
+/* CSS GRID LAYOUT */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+
+.main-header {
+  /* grid-column: 1 / span 2; */
+  /* grid-column: 1 / 2 */
+  /* can also be written as below */
+  grid-column: 1 / -1;
+}
+
+article {
+}
+
+aside {
+}
+
+footer {
+  grid-column: 1 / span 2;
+}

@@ -1,0 +1,74 @@
+Flexbox can be used for !D alyouts while CSS Grid for 2D layouts. They work great in combination.
+
+Both have a column axis and a row axis. However the direction of the flexbox axes can be changed which is
+not true in case of CSS Grid.
+
+display should be set to flex for flexbox and grid for CSS Grid.
+
+gird-template-columns:
+grid-template-rows:
+
+to create a specifif number of rows and columns. Widths can be given using px and also fr.
+
+Flexbox:
+justify-content
+align-items
+
+these two properties align items horizontally and vertically
+
+GRID CONTAINER:
+
+CSS Grid:
+justify-items
+align-items
+
+these two properties align items horizontally and vertically
+
+justify-content
+align-content
+
+these two aligns entire grid inside the container. works only if container larger than grid.
+
+row-gap:
+column-gap:
+
+to make space between tracks.
+
+GRID ITEMS:
+
+grid-column:
+grid-row:
+
+to place a grid item into a specific cell based on line numbers.
+span keyword can be used to span an item across multiple cells
+
+justify-self:
+align-self:
+
+for items inside a grid. It will override other properties on grid like align-items, justify-items.
+
+row-gap:
+column-gap:
+
+for gaps between rows and columns
+
+1fr is used so that a column or rows fills all the available space. same as flex: 1;
+but additionally we can also make multiple columns and rows and adjust their size using 1fr 1fr 1fr, so three
+items of same size or 2fr 1fr 1fr so one double the size of the other two.
+
+grid-column:
+grid-row:
+
+for example set an element grid-column: 1 / 2 ang grid-row: 2 / 3. This will shift that element
+from its original element to ist column and 2nd row. if the number are subsequent like in above cases
+then we can simply omit the / and divider and write the above as grid-column: 1; grid-row: 2;
+
+we can also span an element across multiple cols and rows such as grid-column: 2 /4 and grid-row: 3 / 5.
+this will span the element from 2nd to 4th cols and 3 to 5th rows. Another way of writing the above will be
+grid-column: 2 / span 3. so 2nd, 3rd and 4th. and grid-row: 3 / span 3 so third, 4th and 5th.
+
+if we want to span an element from any column or row to all the way to the end we we can use -1 such
+grid-column: 1 / -1 and grid-row: 1/ -1. This will strech the item across all the cols and rows.
+
+In other words depeneding on the total number of columns and rows, they also have negative number as well eg
+-1 last, -2 2nd last and -3 3rd last and so on.
