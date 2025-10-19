@@ -382,3 +382,45 @@ cuz we already have a footer container to clear both floats on */
   font-weight: normal;
   font-style: italic;
 }
+
+.row {
+  display: flex;
+
+  /* The default value of align-items is strech so it will strech all the children of the row to the height
+  of the highest element and in our case the aside is streched to the full height of article but we
+  only need small space for its content so align-items: flex-start; will work */
+  align-items: flex-start;
+  /* The gap is a flex property and should be used if using flex for layout */
+  gap: 75px;
+  margin-bottom: 60px;
+}
+
+article {
+  /*
+  DEFAULTS
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  */
+
+  /* flex: 0 0 925px; */
+
+  /* The above can also be acheived by the below which will make it keep all the available space */
+
+  flex: 1;
+  margin-bottom: 0;
+}
+
+aside {
+  /* flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 400px; */
+
+  /* The above can also be acheived by */
+
+  flex: 0 0 400px;
+}
+
+li {
+  margin-left: 30px;
+}
